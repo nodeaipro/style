@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- SEO Meta Tags -->
+    <title>Fancy Text Generator - Stylish Fonts, Symbols & Emojis</title>
+    <meta name="description" content="Generate cool and stylish fancy text with a huge collection of fonts, symbols, and emojis. Perfect for social media bios, captions, and messages. Copy and paste anywhere!">
+    <meta name="keywords" content="fancy text generator, stylish text, cool fonts, text symbols, emojis, font generator, instagram fonts, twitter fonts, telegram mini app">
+    <meta name="author" content="v0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Telegram Web App Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Fancy Text Generator</h1>
+            <p>Type below and watch the magic happen!</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-area">
+                <textarea id="text-input" placeholder="Your text here..." rows="4"></textarea>
+                <button id="clear-btn" title="Clear Text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <nav class="tabs">
+                <button class="tab-link active" data-tab="fancy-text">✨ Fancy Text</button>
+                <button class="tab-link" data-tab="symbols">🔣 Symbols</button>
+                <button class="tab-link" data-tab="emojis">😃 Emojis</button>
+            </nav>
+
+            <div id="fancy-text" class="tab-content active">
+                <div id="output-container" class="output-grid">
+                    <!-- Fancy text styles will be generated here -->
+                    <div class="placeholder">Start typing to see a list of stylish fonts...</div>
+                </div>
+            </div>
+
+            <div id="symbols" class="tab-content">
+                <div id="symbols-container" class="output-grid symbols-grid">
+                    <!-- Symbols will be generated here -->
+                </div>
+            </div>
+
+            <div id="emojis" class="tab-content">
+                <div id="emojis-container" class="output-grid symbols-grid">
+                    <!-- Emojis will be generated here -->
+                </div>
+            </div>
+        </main>
+        
+        <footer class="app-footer">
+            <p>Created with ❤️ by v0</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

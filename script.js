@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     // --- DATA ---
     const textStyles = [
@@ -26,10 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Small Caps', map: { normal: 'abcdefghijklmnopqrstuvwxyz', smallCaps: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀꜱᴛᴜᴠᴡxʏᴢ' } },
         { name: 'Wide', map: { normal: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', wide: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ０１２３４５６７８９' } },
         { name: 'Parenthesized', map: { normal: 'abcdefghijklmnopqrstuvwxyz', parenthesized: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵' } },
+        { name: 'Superscript', map: { normal: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', super: 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹' } },
+        { name: 'Subscript', map: { normal: 'abcdefghijklmnopqrstuvwxyz0123456789', sub: 'ₐbcdₑfghijklmₙₒpqrₛₜᵤᵥwₓyz₀₁₂₃₄₅₆₇₈₉' } },
+        { name: 'Special', map: { normal: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', special: 'αɓ૮∂εƒɠɦเʝҡℓɱɳσρφ૨รƭµѵωאყƶαɓ૮∂εƒɠɦเʝҡℓɱɳσρφ૨รƭµѵωאყƶ' } },
+        { name: 'Bent', map: { normal: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', bent: 'ąɓçđєғɢħıĵĸℓmиσρqŗşţųνωxчzĄßÇĐĘFĢĦIĴĶŁMИØPQŖŞŢŲVШXЧZ' } },
+        { name: 'Mirrored', map: { normal: 'abcdefghijklmnopqrstuvwxyz', mirrored: 'ɒdɔbɘʇǫʜiꞁʞ|mnoqpɿƨƚuvwxyɒ' } },
         // Procedural / Transformational Styles
+        { name: 'Reversed', transform: (text) => text.split('').reverse().join('') },
+        { name: 'Wavy', transform: (text) => text.split('').map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('') },
         { name: 'Strikethrough', transform: (text) => text.split('').join('\u0336') },
+        { name: 'Diagonal Strikethrough', transform: (text) => text.split('').join('\u0337') },
+        { name: 'Double Strikethrough', transform: (text) => text.split('').join('\u0338') },
         { name: 'Underline', transform: (text) => text.split('').join('\u0332') },
-        { name: 'Double Underline', transform: (text) => text.split('').join('\u0333') },
+        { name: 'Thick Underline', transform: (text) => text.split('').join('\u0333') },
+        { name: 'Dotted Underline', transform: (text) => text.split('').join('\u0324') },
+        { name: 'Cross Above', transform: (text) => text.split('').join('\u033D') },
+        { name: 'Hearts Between', transform: (text) => text.split('').join('♥') },
+        { name: 'Fairy Dust', transform: (text) => text.split('').map(c => c !== ' ' ? c + '🧚' : ' ').join('') },
         { name: 'Clap Back', transform: (text) => text.toUpperCase().split(' ').join(' 👏 ') },
         { name: 'Magic', transform: (text) => text.split('').join('✨').replace(/ ✨ /g, ' ') },
         { name: 'Upside Down', transform: (text) => {
